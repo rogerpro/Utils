@@ -1,0 +1,33 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
+CREATE TABLE `genders` (
+  `id` int(10) NOT NULL,
+  `eng` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'English',
+  `spa` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Spanish',
+  `cat` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Catalan'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Gender';
+
+INSERT INTO `genders` (`id`, `eng`, `spa`, `cat`) VALUES
+(1, 'Male', 'Hombre', 'Home'),
+(2, 'Female', 'Mujer', 'Dona');
+
+
+ALTER TABLE `genders`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `eng` (`eng`),
+  ADD UNIQUE KEY `spa` (`spa`),
+  ADD UNIQUE KEY `cat` (`cat`);
+
+
+ALTER TABLE `genders`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

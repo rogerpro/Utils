@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Set 'normal' permissions to files & directories
+#
+# Works recursively from the directory where you run the script
+#
+# NOTE: personalize with your needs modifying 755 & 644
+
+find . -type d -exec chmod 755 "{}" ';'
+find . -type f -exec chmod 644 "{}" ';'

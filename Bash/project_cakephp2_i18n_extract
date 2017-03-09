@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Run the CakePHP 2.x command to extract i18n literals from the app source
+#
+# IMPORTANT: before running this script, cd to the app root
+
+Console/cake i18n extract --quiet --overwrite --extract-core no

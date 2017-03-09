@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Project backup
+#
+# Usage:
+#     $ project_backup [PROJECT_DIRECTORY]
+
+# set base route for development (PERSONALIZE!)
+DEV_BASE=$HOME/htdocs
+
+# set base route for backup (PERSONALIZE!)
+BACKUP_BASE=$HOME/backup
+
+# set current date & time
+MOMENT=`date +%Y-%m-%d-%H-%M-%S`
+
+# set source & target
+SOURCE=$DEV_BASE/$1
+TARGET=$BACKUP_BASE/$1
+
+# make backup
+tar czf $TARGET/$1-$MOMENT.tgz $SOURCE

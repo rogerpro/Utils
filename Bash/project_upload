@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Project upload
+#
+# Usage:
+#     $ project_upload [PROJECT_DIRECTORY]
+
+# set base route for local backup (PERSONALIZE!)
+BACKUP_BASE=$HOME/backup
+
+# set base route for remote target (PERSONALIZE!)
+REMOTE=server:directory/subdirectory
+
+# make backup (call related script)
+project_backup $1
+
+# set source file (last backup from project)
+BACKUP_SOURCE=$BACKUP_BASE/$1/`ls -1 $BACKUP_BASE/$1 | tail -1`
+
+# upload
+scp $BACKUP_SOURCE $REMOTE

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Export the structure from a MySQL database
+#
+# Also removes the AUTO_INCREMENT info from the dump (which, for some reason, is considered structure by MySQL)
+#
+# Usage:
+#     $ sql_export_structure [DATABASE_NAME]
+#
+# You need to redirect the output to a file or add the redirection editing this script
+
+mysqldump --compact --no-data $1 | sed 's/ AUTO_INCREMENT=[0-9]*\b//g'

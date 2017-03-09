@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Set read only permissions for all users to files & directories
+#
+# Works recursively from the directory where you run the script
+
+find . -type d -exec chmod 555 "{}" ';'
+find . -type f -exec chmod 444 "{}" ';'

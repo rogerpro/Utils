@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Remove macOS extra attributes from files & directories
+# Remove macOS extra attributes from files & directories, recursively
 #
-# Works recursively from the directory where you run the script
+# Usage:
+#     $ remove_macOS_extra_attributes [TARGET]
 
 xattr -rc $1
